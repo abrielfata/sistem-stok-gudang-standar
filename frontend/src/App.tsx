@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { DashboardLayout } from './components/layout/DashboardLayout';
+import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { ToastContainer } from './components/ui/Toast';
 
 // Lazy Loaded Pages
@@ -48,10 +49,11 @@ export const App: React.FC = () => {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           
-          <Route path="/" element={<DashboardLayout />}>
-            <Route index element={<DashboardPage />} />
-            
-            {/* Master Data */}
+          <Route path="/" element={<ProtectedRoute />}>
+            <Route element={<DashboardLayout />}>
+              <Route index element={<DashboardPage />} />
+              
+              {/* Master Data */}
             <Route path="products" element={<ProductsPage />} />
             <Route path="products/new" element={<ProductFormPage />} />
             <Route path="categories" element={<CategoriesPage />} />
@@ -76,6 +78,9 @@ export const App: React.FC = () => {
             <Route path="audit" element={<AuditLogPage />} />
             <Route path="settings" element={<SettingsPage />} />
 
+            {/* Redirects */}
+            <Route path="dashboard" element={<Navigate to="/" replace />} />
+
             {/* Not Found */}
             <Route path="*" element={
               <div className="p-4 flex flex-col items-center py-20">
@@ -83,6 +88,7 @@ export const App: React.FC = () => {
                 <p className="text-text-muted mt-2">Rute yang Anda tuju belum terdaftar di sistem.</p>
               </div>
             } />
+            </Route>
           </Route>
         </Routes>
       </Suspense>
