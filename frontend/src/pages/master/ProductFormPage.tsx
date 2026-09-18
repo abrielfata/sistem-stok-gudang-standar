@@ -299,3 +299,5 @@ export const ProductFormPage: React.FC = () => {
     </div>
   );
 };
+
+export default ProductFormPage;

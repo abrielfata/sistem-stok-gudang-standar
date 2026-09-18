@@ -307,3 +307,5 @@ export const SuppliersPage: React.FC = () => {
     </div>
   );
 };
+
+export default SuppliersPage;
