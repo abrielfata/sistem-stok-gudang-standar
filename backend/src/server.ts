@@ -23,6 +23,7 @@ app.use(httpLogger({ logger }));
 
 // Mount Routes
 app.use('/api/v1', routes);
+app.use('/', routes); // Fallback alias if client omits /api/v1 prefix
 
 // Global Error Handler
 app.use(errorMiddleware);

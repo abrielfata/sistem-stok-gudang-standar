@@ -1,4 +1,12 @@
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+function getBaseUrl(): string {
+  let envUrl = (import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1').trim().replace(/\/+$/, '');
+  if (!envUrl.endsWith('/api/v1')) {
+    envUrl = `${envUrl}/api/v1`;
+  }
+  return envUrl;
+}
+
+const BASE_URL = getBaseUrl();
 
 export interface ApiResponse<T = any> {
   success: boolean;
