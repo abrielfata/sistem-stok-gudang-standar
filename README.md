@@ -10,8 +10,6 @@
 Sistem manajemen gudang (Warehouse Management System) modern, scalable, dan type-safe untuk mengelola pelacakan stok secara real-time, penerimaan barang (Inbound / GRN), dan pengeluaran barang (Outbound / SO) dengan alokasi FIFO.
 
 ## 🚀 Live Demo
-- **Frontend App:** [https://wms-demo.vercel.app](https://wms-demo.vercel.app)
-- **Backend API:** [https://wms-api.up.railway.app](https://wms-api.up.railway.app)
 - **Akun Demo:**
   - **Admin:** `admin@demo.com` / `admin123`
   - **Staff:** `staff@demo.com` / `staff123`
