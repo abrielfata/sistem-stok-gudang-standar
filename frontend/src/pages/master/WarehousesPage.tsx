@@ -293,3 +293,5 @@ export const WarehousesPage: React.FC = () => {
     </div>
   );
 };
+
+export default WarehousesPage;

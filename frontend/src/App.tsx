@@ -4,33 +4,33 @@ import { DashboardLayout } from './components/layout/DashboardLayout';
 import { ToastContainer } from './components/ui/Toast';
 
 // Lazy Loaded Pages
-const LoginPage = lazy(() => import('./pages/LoginPage').then(m => ({ default: m.LoginPage || (m as any).default })));
-const DashboardPage = lazy(() => import('./pages/DashboardPage').then(m => ({ default: m.DashboardPage || (m as any).default })));
-const ProductsPage = lazy(() => import('./pages/ProductsPage').then(m => ({ default: m.ProductsPage || (m as any).default })));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const DashboardPage = lazy(() => import('./pages/DashboardPage'));
+const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 
 // Master Data
-const ProductFormPage = lazy(() => import('./pages/master/ProductFormPage').then(m => ({ default: m.ProductFormPage || (m as any).default })));
-const CategoriesPage = lazy(() => import('./pages/master/CategoriesPage').then(m => ({ default: m.CategoriesPage || (m as any).default })));
-const UomsPage = lazy(() => import('./pages/master/UomsPage').then(m => ({ default: m.UomsPage || (m as any).default })));
-const WarehousesPage = lazy(() => import('./pages/master/WarehousesPage').then(m => ({ default: m.WarehousesPage || (m as any).default })));
-const SuppliersPage = lazy(() => import('./pages/master/SuppliersPage').then(m => ({ default: m.SuppliersPage || (m as any).default })));
-const CustomersPage = lazy(() => import('./pages/master/CustomersPage').then(m => ({ default: m.CustomersPage || (m as any).default })));
+const ProductFormPage = lazy(() => import('./pages/master/ProductFormPage'));
+const CategoriesPage = lazy(() => import('./pages/master/CategoriesPage'));
+const UomsPage = lazy(() => import('./pages/master/UomsPage'));
+const WarehousesPage = lazy(() => import('./pages/master/WarehousesPage'));
+const SuppliersPage = lazy(() => import('./pages/master/SuppliersPage'));
+const CustomersPage = lazy(() => import('./pages/master/CustomersPage'));
 
 // Inventory
-const StockListPage = lazy(() => import('./pages/inventory/StockListPage').then(m => ({ default: m.StockListPage || (m as any).default })));
-const StockCardPage = lazy(() => import('./pages/inventory/StockCardPage').then(m => ({ default: m.StockCardPage || (m as any).default })));
+const StockListPage = lazy(() => import('./pages/inventory/StockListPage'));
+const StockCardPage = lazy(() => import('./pages/inventory/StockCardPage'));
 
 // Transactions
-const InboundListPage = lazy(() => import('./pages/transactions/InboundListPage').then(m => ({ default: m.InboundListPage || (m as any).default })));
-const InboundDetailPage = lazy(() => import('./pages/transactions/InboundDetailPage').then(m => ({ default: m.InboundDetailPage || (m as any).default })));
-const InboundFormPage = lazy(() => import('./pages/transactions/InboundFormPage').then(m => ({ default: m.InboundFormPage || (m as any).default })));
-const OutboundListPage = lazy(() => import('./pages/transactions/OutboundListPage').then(m => ({ default: m.OutboundListPage || (m as any).default })));
-const OutboundFormPage = lazy(() => import('./pages/transactions/OutboundFormPage').then(m => ({ default: m.OutboundFormPage || (m as any).default })));
-const OutboundDetailPage = lazy(() => import('./pages/transactions/OutboundDetailPage').then(m => ({ default: m.OutboundDetailPage || (m as any).default })));
+const InboundListPage = lazy(() => import('./pages/transactions/InboundListPage'));
+const InboundDetailPage = lazy(() => import('./pages/transactions/InboundDetailPage'));
+const InboundFormPage = lazy(() => import('./pages/transactions/InboundFormPage'));
+const OutboundListPage = lazy(() => import('./pages/transactions/OutboundListPage'));
+const OutboundFormPage = lazy(() => import('./pages/transactions/OutboundFormPage'));
+const OutboundDetailPage = lazy(() => import('./pages/transactions/OutboundDetailPage'));
 
 // System
-const AuditLogPage = lazy(() => import('./pages/system/AuditLogPage').then(m => ({ default: m.AuditLogPage || (m as any).default })));
-const SettingsPage = lazy(() => import('./pages/system/SettingsPage').then(m => ({ default: m.SettingsPage || (m as any).default })));
+const AuditLogPage = lazy(() => import('./pages/system/AuditLogPage'));
+const SettingsPage = lazy(() => import('./pages/system/SettingsPage'));
 
 const PageLoader: React.FC = () => (
   <div className="w-full h-full min-h-[300px] flex items-center justify-center font-mono text-xs text-text-muted">

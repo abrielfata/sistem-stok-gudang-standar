@@ -297,3 +297,5 @@ export const InboundFormPage: React.FC = () => {
     </div>
   );
 };
+
+export default InboundFormPage;
