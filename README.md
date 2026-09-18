@@ -1,9 +1,11 @@
 # Sistem Gudang (WMS) — Portfolio Project
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+[![CI Pipeline](https://github.com/abrielfata/sistem-stok-gudang-standar/actions/workflows/ci.yml/badge.svg)](https://github.com/abrielfata/sistem-stok-gudang-standar/actions/workflows/ci.yml)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
 ![Drizzle ORM](https://img.shields.io/badge/Drizzle%20ORM-0.45.2-orange)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4-38bdf8)
+![Vitest](https://img.shields.io/badge/Tests-15%20Passed-brightgreen)
 
 Sistem manajemen gudang (Warehouse Management System) modern, scalable, dan type-safe untuk mengelola pelacakan stok secara real-time, penerimaan barang (Inbound / GRN), dan pengeluaran barang (Outbound / SO) dengan alokasi FIFO.
 
