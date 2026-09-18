@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --font-geist-sans: 'Geist Sans';
+    --font-geist-mono: 'Geist Mono';
+
+    /* LIGHT MODE (Slate / Cool Neutral - Soft & Eye-Friendly) */
+    --bg-app: #F8FAFC; /* slate-50 off-white */
+    --bg-surface: #FFFFFF; /* white card */
+    --bg-subtle: #F1F5F9; /* slate-100 */
+    
+    --border: #E2E8F0; /* slate-200 soft border */
+    --border-strong: #CBD5E1; /* slate-300 */
+    
+    --text-primary: #1E293B; /* slate-800 soft dark */
+    --text-secondary: #475569; /* slate-600 */
+    --text-muted: #64748B; /* slate-500 */
+    
+    --accent: #0F172A; /* slate-900 */
+    --accent-hover: #1E293B; /* slate-800 */
+    --accent-text: #FFFFFF;
+  }
+
+  .dark {
+    /* DARK MODE (Slate Soft Dark) */
+    --bg-app: #020617; /* slate-950 */
+    --bg-surface: #0F172A; /* slate-900 */
+    --bg-subtle: #1E293B; /* slate-800 */
+    
+    --border: #1E293B; /* slate-800 */
+    --border-strong: #334155; /* slate-700 */
+    
+    --text-primary: #E2E8F0; /* slate-200 non-glare text */
+    --text-secondary: #94A3B8; /* slate-400 */
+    --text-muted: #64748B; /* slate-500 */
+    
+    --accent: #F1F5F9; /* slate-100 */
+    --accent-hover: #E2E8F0; /* slate-200 */
+    --accent-text: #0F172A; /* slate-900 */
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  table { 
+    border-collapse: collapse; 
+    width: 100%; 
+  }
+}
+
+@layer components {
+  /* Ergonomic Typography Scale */
+  .page-title {
+    @apply text-2xl font-semibold tracking-[-0.01em] text-text-primary;
+  }
+  .page-subtitle {
+    @apply text-sm font-normal text-text-muted leading-relaxed;
+  }
+  .section-header {
+    @apply text-sm font-semibold tracking-[0.04em] uppercase text-text-muted;
+  }
+  .card-label {
+    @apply text-xs font-semibold tracking-[0.06em] uppercase text-text-muted;
+  }
+  .kpi-value {
+    @apply text-[30px] font-semibold font-sans tabular-nums tracking-[-0.02em] text-text-primary;
+  }
+  .kpi-subtext {
+    @apply text-xs font-medium text-text-muted;
+  }
+}

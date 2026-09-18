@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- Dynamic theme support: adaptive to OS browser tabs -->
+  <style>
+    :root {
+      --box-stroke: #0F172A;
+      --w-accent: #0284C7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --box-stroke: #F8FAFC;
+        --w-accent: #38BDF8;
+      }
+    }
+  </style>
+  <!-- Outer Hex/Cube Contour (Transparent Background) -->
+  <path d="M16 3L5 9.5V22.5L16 29L27 22.5V9.5L16 3Z" stroke="var(--box-stroke)" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M5 9.5L16 16L27 9.5" stroke="var(--box-stroke)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 16V29" stroke="var(--box-stroke)" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Stylized "W" Core Geometry -->
+  <path d="M10 12.8L16 16.3L22 12.8" stroke="var(--w-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 18.8L16 22.3L22 18.8" stroke="var(--w-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
