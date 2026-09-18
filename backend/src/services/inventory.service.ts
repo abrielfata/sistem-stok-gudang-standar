@@ -152,7 +152,7 @@ export class InventoryService {
       .orderBy(asc(stockMovements.createdAt));
 
     let runningBalance = 0;
-    return data.map((mov) => {
+    return data.map((mov: any) => {
       if (mov.type === 'IN') {
         runningBalance += mov.qty;
       } else {
@@ -199,10 +199,10 @@ export class InventoryService {
       .orderBy(asc(stockMovements.createdAt));
 
     let totalOut = movements
-      .filter((m) => m.type === 'OUT')
-      .reduce((sum, m) => sum + m.qty, 0);
+      .filter((m: any) => m.type === 'OUT')
+      .reduce((sum: number, m: any) => sum + m.qty, 0);
 
-    const inMovements = movements.filter((m) => m.type === 'IN');
+    const inMovements = movements.filter((m: any) => m.type === 'IN');
     const fifoItems: FifoItem[] = [];
 
     for (const inMov of inMovements) {

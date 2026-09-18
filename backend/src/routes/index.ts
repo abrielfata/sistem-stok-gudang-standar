@@ -29,7 +29,7 @@ router.use('/audit', auditRoutes);
 router.use('/dashboard', dashboardRoutes);
 
 // Health checks
-router.get('/health', (req, res) => {
+router.get('/health', (req: any, res: any) => {
   res.status(200).json({ success: true, message: 'Server is healthy' });
 });
 

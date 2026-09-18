@@ -102,7 +102,7 @@ export class InboundService {
   }
 
   static async createGrn(data: z.infer<typeof createGrnSchema>, userId: string) {
-    return db.transaction(async (tx) => {
+    return db.transaction(async (tx: any) => {
       const grnNumber = await generateGrnNumber(tx);
 
       const [grn] = await tx
@@ -118,7 +118,7 @@ export class InboundService {
         .returning();
 
       await tx.insert(goodsReceiptLines).values(
-        data.lines.map((line) => ({
+        data.lines.map((line: any) => ({
           grnId: grn.id,
           productId: line.productId,
           qty: line.qty,
@@ -144,7 +144,7 @@ export class InboundService {
       throw new BadRequestError(`GRN tidak bisa di-confirm karena status saat ini: ${grn.status}`);
     }
 
-    await db.transaction(async (tx) => {
+    await db.transaction(async (tx: any) => {
       // Setiap line → adjustStock (IN) dalam 1 transaksi yang sama
       for (const line of grn.lines) {
         await InventoryService.adjustStock(
