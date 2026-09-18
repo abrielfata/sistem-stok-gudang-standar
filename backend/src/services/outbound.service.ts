@@ -102,7 +102,7 @@ export class OutboundService {
   }
 
   static async createSo(data: z.infer<typeof createSoSchema>, userId: string) {
-    return db.transaction(async (tx) => {
+    return db.transaction(async (tx: any) => {
       const soNumber = await generateSoNumber(tx);
 
       const [so] = await tx
@@ -118,7 +118,7 @@ export class OutboundService {
         .returning();
 
       await tx.insert(salesOrderLines).values(
-        data.lines.map((line) => ({
+        data.lines.map((line: any) => ({
           soId: so.id,
           productId: line.productId,
           qty: line.qty,
@@ -144,7 +144,7 @@ export class OutboundService {
       throw new BadRequestError(`SO tidak bisa di-confirm karena status saat ini: ${so.status}`);
     }
 
-    await db.transaction(async (tx) => {
+    await db.transaction(async (tx: any) => {
       // Validasi dan kurangi stok untuk setiap line
       for (const line of so.lines) {
         // Cek alokasi FIFO jika diperlukan catatan pergerakan batch
